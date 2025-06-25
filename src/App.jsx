@@ -1,10 +1,7 @@
-// ARQUIVO: src/App.jsx
 import React, { useState, useEffect } from 'react';
 
-// Importando componentes reutilizáveis
 import BottomNavBar from './components/BottomNavBar';
 
-// Importando todas as telas da aplicação
 import SplashScreen from './screens/SplashScreen';
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
@@ -21,11 +18,8 @@ import PaymentMethodsScreen from './screens/PaymentMethodsScreen';
 import CouponsScreen from './screens/CouponsScreen';
 import HelpScreen from './screens/HelpScreen';
 
-// Componente Principal
 export default function App() {
-    // =================================================================
-    // ESTADOS GLOBAIS DA APLICAÇÃO
-    // =================================================================
+
     const [history, setHistory] = useState(['splash']);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedRestaurant, setSelectedRestaurant] = useState(null);
@@ -35,11 +29,6 @@ export default function App() {
     const currentPage = history[history.length - 1];
     const cartItemCount = cart.reduce((acc, item) => acc + item.quantity, 0);
 
-    // =================================================================
-    // FUNÇÕES DE LÓGICA
-    // =================================================================
-
-    // Controla a navegação entre as telas
     const navigate = (page) => {
         if (page === -1) {
             if (history.length > 1) {
@@ -50,7 +39,6 @@ export default function App() {
         }
     };
 
-    // Adiciona um item ao carrinho
     const addToCart = (item) => {
         const existingItem = cart.find(cartItem => cartItem.id === item.id);
         if (existingItem) {
@@ -60,11 +48,9 @@ export default function App() {
         } else {
             setCart(prevCart => [...prevCart, { ...item, quantity: 1 }]);
         }
-        // Volta para a tela do restaurante para o usuário continuar comprando
         navigate(-1);
     };
 
-    // Efeito para a tela de splash inicial
     useEffect(() => {
         if (currentPage === 'splash') {
             const timer = setTimeout(() => navigate('login'), 2000);
@@ -72,9 +58,6 @@ export default function App() {
         }
     }, [currentPage]);
 
-    // =================================================================
-    // RENDERIZADOR DE PÁGINAS
-    // =================================================================
     const renderPage = () => {
         switch (currentPage) {
             case 'splash': return <SplashScreen />;
@@ -96,9 +79,6 @@ export default function App() {
         }
     };
 
-    // =================================================================
-    // ESTRUTURA PRINCIPAL DO APP
-    // =================================================================
     return (
         <div className="bg-gray-800 flex justify-center items-center min-h-screen font-sans">
             <div className="w-[390px] h-[844px] bg-gray-50 shadow-2xl rounded-[40px] overflow-hidden relative">
