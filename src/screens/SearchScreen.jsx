@@ -18,7 +18,7 @@ export default function SearchScreen({ onNavigate, onSelectRestaurant }) {
                 <h3 className="font-bold text-gray-600 mb-4">Sugestões</h3>
                 <div className="space-y-3">
                     {allRestaurants.map(r => (
-                         <div key={r.id} onClick={() => { onSelectRestaurant(restaurantDetails[1]); onNavigate('restaurantDetail'); }} className="flex items-center space-x-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                         <div key={r.id} onClick={() => { onSelectRestaurant(restaurantDetails[r.id]); onNavigate('restaurantDetail'); }} className="flex items-center space-x-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
                             <img src={r.logo} alt={r.name} className="w-12 h-12 rounded-md object-cover" />
                             <div>
                                 <h4 className="font-bold text-gray-800">{r.name}</h4>

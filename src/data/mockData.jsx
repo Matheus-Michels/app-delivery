@@ -1,4 +1,3 @@
-// ARQUIVO: src/data/mockData.jsx
 import React from 'react';
 import { Home, Briefcase, Soup, Pizza, Sandwich, MoreHorizontal, Fish, School } from 'lucide-react';
 
@@ -24,12 +23,14 @@ export const restaurants = {
   'Lanches': [
      { id: 5, name: 'Burger Queen', rating: 4.5, deliveryTime: '20-35 min', deliveryFee: 'R$ 8,90', logo: 'https://placehold.co/100x100/f39c12/ffffff?text=BQ' },
      { id: 6, name: 'Super Dog', rating: 4.8, deliveryTime: '15-30 min', deliveryFee: 'Grátis', logo: 'https://placehold.co/100x100/f1c40f/ffffff?text=SD' },
-     { id: 9, name: 'Açai Mania', rating: 4.9, deliveryTime: '15-25 min', deliveryFee: 'R$ 3,00', logo: 'https://placehold.co/100x100/8e44ad/ffffff?text=AM' },
   ],
   'Japonesa': [
       { id: 10, name: 'Sushi House', rating: 4.8, deliveryTime: '45-60 min', deliveryFee: 'R$ 9,50', logo: 'https://placehold.co/100x100/2980b9/ffffff?text=SH' },
       { id: 11, name: 'Taro Sushi', rating: 4.7, deliveryTime: '40-55 min', deliveryFee: 'Grátis', logo: 'https://placehold.co/100x100/34495e/ffffff?text=TS' },
-  ]
+  ],
+  'Outros': [
+      { id: 9, name: 'Açai Mania', rating: 4.9, deliveryTime: '15-25 min', deliveryFee: 'R$ 3,00', logo: 'https://placehold.co/100x100/8e44ad/ffffff?text=AM' },
+  ],
 };
 
 export const restaurantDetails = {
@@ -46,9 +47,76 @@ export const restaurantDetails = {
   },
   3: {
     id: 3, name: 'Pizza Express', rating: 4.7, deliveryTime: '25-40 min', deliveryFee: 'R$ 7,00', logo: 'https://placehold.co/100x100/e74c3c/ffffff?text=PE', banner: 'https://placehold.co/600x200/e74c3c/ffffff?text=Pizzas',
-    menu: { 'Pizzas': [{id: 301, name: 'Pizza Grande Calabresa', description: 'Molho, mussarela, calabresa e cebola.', price: 45.00}], 'Bebidas': [] }
+    menu: { 
+        'Pizzas': [
+            {id: 301, name: 'Pizza Grande Calabresa', description: 'Molho, mussarela, calabresa e cebola.', price: 45.00},
+            {id: 302, name: 'Pizza Grande 4 Queijos', description: 'Molho, mussarela, provolone, parmesão e gorgonzola.', price: 52.00}
+        ], 
+        'Bebidas': [
+            {id: 303, name: 'Refrigerante 2L', description: 'Coca-cola ou Guaraná', price: 10.00}
+        ] 
+    }
   },
-  // Detalhes adicionados
+  4: {
+    id: 4, name: 'Bella Pizza', rating: 4.6, deliveryTime: '35-50 min', deliveryFee: 'R$ 4,50', logo: 'https://placehold.co/100x100/c0392b/ffffff?text=BP', banner: 'https://placehold.co/600x200/c0392b/ffffff?text=Bella+Pizza',
+    menu: {
+        'Pizzas Salgadas': [
+            { id: 401, name: 'Pizza Margherita', description: 'Molho de tomate fresco, mussarela e manjericão.', price: 42.00 },
+            { id: 402, name: 'Pizza Portuguesa', description: 'Mussarela, presunto, ovo, cebola e azeitona.', price: 48.00 }
+        ],
+        'Pizzas Doces': [
+            { id: 403, name: 'Pizza de Chocolate', description: 'Chocolate ao leite com morangos frescos.', price: 35.00 }
+        ]
+    }
+  },
+  5: {
+    id: 5, name: 'Burger Queen', rating: 4.5, deliveryTime: '20-35 min', deliveryFee: 'R$ 8,90', logo: 'https://placehold.co/100x100/f39c12/ffffff?text=BQ', banner: 'https://placehold.co/600x200/f39c12/ffffff?text=Burger+Queen',
+    menu: {
+        'Burgers': [
+            { id: 501, name: 'Queen Burger Duplo', description: 'Dois hambúrgueres, queijo cheddar, alface, tomate e molho especial.', price: 28.50 },
+            { id: 502, name: 'Chicken Crispy', description: 'Frango empanado crocante, maionese temperada e alface.', price: 24.00 }
+        ],
+        'Porções': [
+            { id: 503, name: 'Batata Frita com Cheddar e Bacon', description: 'Porção generosa de batatas fritas crocantes.', price: 18.00 }
+        ]
+    }
+  },
+  6: {
+    id: 6, name: 'Super Dog', rating: 4.8, deliveryTime: '15-30 min', deliveryFee: 'Grátis', logo: 'https://placehold.co/100x100/f1c40f/ffffff?text=SD', banner: 'https://placehold.co/600x200/f1c40f/ffffff?text=Super+Dog',
+    menu: {
+        'Hot Dogs': [
+            { id: 601, name: 'Super Dogão Prensado', description: 'Duas salsichas, purê, batata palha, milho e vinagrete.', price: 15.00 },
+            { id: 602, name: 'Hot Dog de Frango', description: 'Salsicha, frango desfiado cremoso e batata palha.', price: 16.00 }
+        ],
+        'Bebidas': [
+            { id: 603, name: 'Refrigerante Lata', description: 'Opções variadas.', price: 5.00 }
+        ]
+    }
+  },
+  7: {
+    id: 7, name: 'Churrascaria Fogo no Chão', rating: 4.7, deliveryTime: '50-65 min', deliveryFee: 'R$ 10,00', logo: 'https://placehold.co/100x100/c0392b/ffffff?text=FC', banner: 'https://placehold.co/600x200/e74c3c/ffffff?text=Churrasco',
+    menu: {
+        'Carnes': [
+            { id: 701, name: 'Picanha Grelhada (500g)', description: 'Acompanha arroz, farofa e vinagrete.', price: 79.90 },
+            { id: 702, name: 'Costela no Bafo', description: 'Costela assada lentamente, acompanha mandioca cozida.', price: 69.90 }
+        ],
+        'Acompanhamentos': [
+            { id: 703, name: 'Maionese da Casa', description: 'Porção de 500g.', price: 15.00 }
+        ]
+    }
+  },
+  8: {
+    id: 8, name: 'Forno a Lenha Pizzaria', rating: 4.9, deliveryTime: '30-45 min', deliveryFee: 'Grátis', logo: 'https://placehold.co/100x100/d35400/ffffff?text=FL', banner: 'https://placehold.co/600x200/d35400/ffffff?text=Pizzaria+Forno+a+Lenha',
+    menu: {
+        'Pizzas Especiais': [
+            { id: 801, name: 'Pizza da Casa', description: 'Mussarela de búfala, tomate seco e rúcula.', price: 55.00 },
+            { id: 802, name: 'Pizza Pepperoni', description: 'Mussarela, pepperoni e molho de tomate especial.', price: 50.00 }
+        ],
+        'Calzones': [
+            { id: 803, name: 'Calzone de Frango com Catupiry', description: 'Massa fechada e recheada com frango e catupiry.', price: 45.00 }
+        ]
+    }
+  },
   9: {
     id: 9, name: 'Açai Mania', rating: 4.9, deliveryTime: '15-25 min', deliveryFee: 'R$ 3,00', logo: 'https://placehold.co/100x100/8e44ad/ffffff?text=AM', banner: 'https://placehold.co/600x200/9b59b6/ffffff?text=Açaí+e+Cremes',
     menu: {
@@ -61,6 +129,18 @@ export const restaurantDetails = {
     menu: {
         'Combinados': [ { id: 1001, name: 'Combinado 20 peças', description: 'Seleção do chef com peças variadas.', price: 55.00 }, { id: 1002, name: 'Combinado Salmão 15 peças', description: 'Sashimi, niguiri e uramaki de salmão.', price: 45.00 } ],
         'Temakis': [ { id: 1003, name: 'Temaki Salmão Completo', description: 'Arroz, salmão, cream cheese e cebolinha.', price: 25.00 } ]
+    }
+  },
+  11: {
+    id: 11, name: 'Taro Sushi', rating: 4.7, deliveryTime: '40-55 min', deliveryFee: 'Grátis', logo: 'https://placehold.co/100x100/34495e/ffffff?text=TS', banner: 'https://placehold.co/600x200/34495e/ffffff?text=Taro+Sushi',
+    menu: {
+        'Uramakis': [
+            { id: 1101, name: 'Uramaki Filadélfia (8 un)', description: 'Salmão, cream cheese e cebolinha.', price: 22.00 },
+            { id: 1102, name: 'Uramaki Skin (8 un)', description: 'Pele de salmão grelhada e molho teriyaki.', price: 18.00 }
+        ],
+        'Hossomakis': [
+            { id: 1103, name: 'Hossomaki de Pepino (8 un)', description: 'Alga, arroz e pepino.', price: 12.00 }
+        ]
     }
   }
 };

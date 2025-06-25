@@ -4,7 +4,7 @@ import { restaurantDetails } from '../data/mockData';
 
 export default function RestaurantCard({ restaurant, onNavigate, onSelectRestaurant }) {
   const handleCardClick = () => {
-    const details = restaurantDetails[restaurant.id] || restaurantDetails[1];
+    const details = restaurantDetails[restaurant.id];
     onSelectRestaurant(details);
     onNavigate('restaurantDetail');
   }

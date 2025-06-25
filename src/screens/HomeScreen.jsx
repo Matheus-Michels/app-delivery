@@ -36,7 +36,7 @@ export default function HomeScreen({ onNavigate, onSelectCategory, onSelectResta
 
             <h3 className="text-xl font-bold mb-3 text-gray-800">Restaurantes Famosos</h3>
             <div className="space-y-3">
-                <RestaurantCard restaurant={restaurants['Lanches'][0]} onNavigate={onNavigate} onSelectRestaurant={onSelectRestaurant} />
+                <RestaurantCard restaurant={restaurants['Brasileira'][0]} onNavigate={onNavigate} onSelectRestaurant={onSelectRestaurant} />
                 <RestaurantCard restaurant={restaurants['Brasileira'][1]} onNavigate={onNavigate} onSelectRestaurant={onSelectRestaurant} />
             </div>
         </div>
