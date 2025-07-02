@@ -1,7 +1,9 @@
-import React from 'react';
-import { XCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { XCircle, Plus, Minus } from 'lucide-react';
 
 export default function MenuItemDetailScreen({ item, onNavigate, onAddToCart }) {
+    const [quantity, setQuantity] = useState(1);
+
     if (!item) {
         return (
             <div className="flex justify-center items-center h-full">
@@ -9,6 +11,20 @@ export default function MenuItemDetailScreen({ item, onNavigate, onAddToCart }) 
             </div>
         );
     }
+
+    const handleAddToCart = () => {
+        onAddToCart(item, quantity);
+    };
+
+    const increment = () => {
+        setQuantity(prev => prev + 1);
+    };
+
+    const decrement = () => {
+        setQuantity(prev => (prev > 1 ? prev - 1 : 1));
+    };
+
+    const totalPrice = (item.price * quantity).toFixed(2).replace('.', ',');
 
     return (
         <div className="flex flex-col h-full">
@@ -26,9 +42,17 @@ export default function MenuItemDetailScreen({ item, onNavigate, onAddToCart }) 
                 </div>
             </div>
             <footer className="p-4 border-t flex items-center justify-between bg-white sticky bottom-0">
-                <p className="text-2xl font-bold text-gray-800">R$ {item.price.toFixed(2).replace('.', ',')}</p>
-                <button onClick={() => onAddToCart(item)} className="bg-red-600 text-white px-6 py-3 rounded-lg font-bold">
-                    Adicionar
+                <div className="flex items-center gap-3">
+                    <button onClick={decrement} className="p-2 bg-gray-200 rounded-full">
+                        <Minus size={20} className="text-red-600"/>
+                    </button>
+                    <span className="font-bold text-lg w-8 text-center">{quantity}</span>
+                    <button onClick={increment} className="p-2 bg-gray-200 rounded-full">
+                        <Plus size={20} className="text-red-600"/>
+                    </button>
+                </div>
+                <button onClick={handleAddToCart} className="bg-red-600 text-white px-5 py-3 rounded-lg font-bold">
+                    Adicionar (R$ {totalPrice})
                 </button>
             </footer>
         </div>

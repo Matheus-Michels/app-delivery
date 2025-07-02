@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Briefcase, Soup, Pizza, Sandwich, MoreHorizontal, Fish, School } from 'lucide-react';
+import { Home, Briefcase, Soup, Pizza, Sandwich, MoreHorizontal, Fish, School, CreditCard, KeySquare } from 'lucide-react';
 
 export const categories = [
   { name: 'Brasileira', icon: <Soup size={24} className="mx-auto" /> },
@@ -158,10 +158,10 @@ export const mockAddresses = [
     { id: 3, type: 'Faculdade', street: 'Via do Conhecimento, 789', city: 'Campo Mourão, PR', icon: <School /> },
 ];
 
-export const mockPayments = [
-    { id: 1, type: 'Crédito', brand: 'Mastercard', last4: '1234' },
-    { id: 2, type: 'Crédito', brand: 'Visa', last4: '5678' },
-    { id: 3, type: 'Pix', brand: 'Pix', last4: '' },
+export const mockPaymentMethods = [
+    { id: 1, type: 'Cartão de Crédito', details: 'Mastercard **** 1234', icon: <CreditCard /> },
+    { id: 2, type: 'Cartão de Crédito', details: 'Visa **** 5678', icon: <CreditCard /> },
+    { id: 3, type: 'Pix', details: 'Chave cadastrada', icon: <KeySquare /> },
 ];
 
 export const mockCoupons = [

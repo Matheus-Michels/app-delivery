@@ -16,7 +16,7 @@ export default function ProfileScreen({ onNavigate }) {
 
                 <div className="space-y-2">
                     <ProfileMenuItem icon={<ShoppingCart size={20} />} text="Meus Pedidos" onClick={() => onNavigate('myOrders')} />
-                    <ProfileMenuItem icon={<Map size={20} />} text="Endereços Salvos" onClick={() => onNavigate('savedAddresses')} />
+                    <ProfileMenuItem icon={<Map size={20} />} text="Endereços" onClick={() => onNavigate('savedAddresses')} />
                     <ProfileMenuItem icon={<CreditCard size={20} />} text="Formas de Pagamento" onClick={() => onNavigate('paymentMethods')} />
                     <ProfileMenuItem icon={<Tag size={20} />} text="Cupons" onClick={() => onNavigate('coupons')} />
                     <ProfileMenuItem icon={<HelpCircle size={20} />} text="Ajuda" onClick={() => onNavigate('help')} />
